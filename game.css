@@ -1,0 +1,160 @@
+/* === Reset & Base === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* body {
+  font-family: "Courier New", ui-monospace, monospace;
+  background: #e5e5e5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: #000;
+} */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+}
+
+/* === Bento Card (portfolio cell) === */
+.bento-card {
+  width: 100%;
+  max-width: 100%; /* Changed from 460px to 100% */
+  background: #ffffff;
+  border: 4px solid #000;
+  box-shadow: none; /* Removed heavy external box shadow to prevent overflow inside container */
+  padding: 14px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.bento-header,
+.bento-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.bento-header {
+  margin-bottom: 10px;
+}
+.bento-footer {
+  margin-top: 10px;
+  color: #555;
+}
+.bento-title {
+  background: #000;
+  color: #ffe600;
+  padding: 4px 8px;
+}
+.bento-tag {
+  background: #00ff66;
+  border: 2px solid #000;
+  padding: 2px 6px;
+}
+
+/* === Game Canvas === */
+.game-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 4px solid #000;
+  background: #ffffff;
+  overflow: hidden;
+}
+#brickCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none; /* cegah scroll halaman saat sentuh canvas */
+}
+
+/* === Name Input Modal (Brutalism) === */
+.name-modal {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+.name-modal.hidden {
+  display: none;
+}
+.name-error {
+  display: none;
+  color: #ff0055;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 8px 0;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+.name-error.visible {
+  display: block !important;
+}
+
+.modal-content {
+  background: #ffe600;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+.modal-content h2 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border: 4px solid #000;
+  background: #fff;
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #000;
+  outline: none;
+}
+.modal-content input:focus {
+  background: #00ff66;
+}
+.modal-content button {
+  background: #000;
+  color: #00ff66;
+  border: 4px solid #000;
+  padding: 10px 20px;
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.1s;
+}
+.modal-content button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}

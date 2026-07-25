@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>BRICK BREAKER — Bento Edition</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <main class="bento-card">
+      <header class="bento-header">
+        <span class="bento-title">BRICK BREAKER</span>
+        <span class="bento-tag">V1.1</span>
+      </header>
+      <div class="game-wrap">
+        <canvas id="brickCanvas" aria-label="Brick Breaker game"></canvas>
+
+        <!-- Name Input Modal -->
+        <div id="nameModal" class="name-modal">
+          <div class="modal-content">
+            <h2>Enter Your Name</h2>
+            <input
+              type="text"
+              id="playerNameInput"
+              maxlength="10"
+              placeholder="ANON"
+              autocomplete="off"
+            />
+            <!-- Add this error line -->
+            <p id="nameError" class="name-error"></p>
+            <button id="startGameBtn">Start Game</button>
+          </div>
+        </div>
+      </div>
+      <footer class="bento-footer">
+        <span>← → / MOUSE / TOUCH</span>
+        <span id="lastScore">LAST: ----</span>
+      </footer>
+    </main>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
